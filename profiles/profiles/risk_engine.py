@@ -164,13 +164,25 @@ class RiskEngine:
                     "and income-generating holdings over speculative growth."
                 ),
             },
+
+            # ✔ Bull in a China Shop – reckless, forceful allocator
+            "bullinchinashop": {
+                "volatility_tolerance": 0.95,
+                "max_allocation_per_sector": 0.85,
+                "preferred_sectors": ["cyclicals", "small_caps", "high_beta_tech", "turnaround_plays"],
+                "style": "Reckless Aggression",
+                "description": (
+                    "Charges into volatile opportunities with little concern for short-term drawdowns. "
+                    "Overweights noisy, high-beta sectors and isn't afraid of concentrated bets."
+                ),
+            },
         }
 
     def get_profile(self):
         """
         Returns:
         - a detailed dict for the selected archetype (if it exists)
-        - a standard risk profile (if 'low'/'medium'/'high' etc)
+        - a standard risk profile (if 'low'/'medium'/'high')
         - medium profile as a safe default if nothing matches
         """
         if self.profile in self.archetypes:
