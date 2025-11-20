@@ -10,7 +10,7 @@ This file connects:
 This simulates the backend engine of an early-stage investment product.
 """
 
-from ai.model import TrendModel
+from ai.ai.model import TrendModel
 
 class TrendPipeline:
     def __init__(self, risk_profile: str):
